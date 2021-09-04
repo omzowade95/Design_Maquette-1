@@ -59,7 +59,7 @@ img {
 }
 
 .baseline-welcome {
-    font-family: 'Pinyon Script', Serif;
+    font-family: 'Pinyon Script', serif;
     color: #C89446;
     font-size: 2.2rem;
     display: block;
@@ -100,6 +100,11 @@ img {
     padding:  0 20px;
     max-width: 960px;
 }
+.container{
+    margin : 0 auto;
+    padding:  0 20px;
+    max-width: 1150px;
+}
 .home-section {
     padding-top: 9px;
 }
@@ -117,7 +122,7 @@ img {
     color: black;
 }
 .title span {
-    font-family: 'Pinyon Script' , Serif;
+    font-family: 'Pinyon Script' , serif;
     color: #C89446;
     font-size: 2.5rem;
     display: block;
@@ -157,6 +162,74 @@ img {
 
 .block-centered {
     text-align: center;
+}
+
+.block-centered .block-body {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto ;
+}
+.ingredient-menu {
+    font-weight: 600;
+    margin: 40px 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #383838;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.ingredient-menu a {
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+}
+
+.ingredient-menu a::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    opacity: 0;
+    background: #C89446;
+    transition: all .3s;
+}
+
+.ingredient-menu .active::after , .ingredient-menu a:hover::after {
+    bottom: 0;
+    opacity: 1;
+}
+
+.menu-summary-item {
+    padding-left: 120px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.menu-summary-img {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.menu-summary p {
+    margin: 0;
+    padding-bottom: 1rem;
+    font-size: 0.875rem;
+}
+.menu-summary-title {
+    font-size: 1.125rem;
+    color: #383838;
+    font-weight: bold;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0;
+}
+.menu-summary-price {
+    font-size: 2.5rem;
+    font-family: 'Pinyon Script', serif;
+    color: #C89446;
+    line-height: 1;
 }
 @media only screen and (min-width: 600px) {
     html {
@@ -202,6 +275,9 @@ img {
 @media only screen and (min-width: 800px) {
     .block {
         margin-bottom: 100px;
+    }
+    .block-last {
+        margin-bottom: 60px;
     }
     .block-left, .block-right {
         display: flex;
@@ -259,7 +335,67 @@ img {
 
     .home-section {
         background:
-                fixed top 95px right 0px url("img/oranges.jpg") no-repeat,
-                fixed top 640px left 0px url("img/spices.jpg") no-repeat;
+                fixed top 95px right 0 url("img/oranges.jpg") no-repeat,
+                fixed top 640px left 0 url("img/spices.jpg") no-repeat;
+    }
+
+    .ingredient-menu a {
+        margin: 0 31px;
+    }
+
+    .menu-summary {
+        padding: 85px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .menu-summary-item {
+        padding-left: 192px;
+        margin-bottom: 110px;
+        width: calc(50% - 40px);
+    }
+    .menu-summary-img {
+        width: 160px;
+        height: 160px;
+    }
+    .menu-summary-title {
+        margin-top: 0;
+        line-height: 1.2;
+        background: white;
+    }
+
+    .menu-summary-item:nth-child(2n){
+        text-align: right;
+        padding-left: 0;
+        padding-right: 192px;
+    }
+    .menu-summary-item:nth-child(2n) .menu-summary-img{
+        left: auto;
+        right: 0;
+    }
+    .menu-summary p {
+        background: white;
+    }
+
+    .menu-summary-item:nth-child(2n) .menu-summary-price {
+        margin-left: auto;
+    }
+    .menu-summary-price {
+        padding-top: 4px;
+        width: 84px;
+        background: white;
+    }
+    .menu-summary::before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        width: 420px;
+        height: 420px;
+        border: solid 1px #C89446;
+        transform: translate(-50%,-260px) rotate(45deg);
     }
 }
